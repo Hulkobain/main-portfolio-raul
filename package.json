@@ -1,0 +1,38 @@
+{
+  "name": "raul-romero-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Iván Rodríguez",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix"
+  },
+  "dependencies": {
+    "clsx": "2.1.0",
+    "framer-motion": "11.0.3",
+    "iconoir-react": "^7.4.0",
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^14.1.0",
+    "@vercel/style-guide": "^5.1.0",
+    "autoprefixer": "10.4.17",
+    "eslint": "8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.33.2",
+    "postcss": "8.4.33",
+    "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "tailwindcss": "3.4.1"
+  }
+}
