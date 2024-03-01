@@ -3,7 +3,7 @@
 <h1>Hulkobain Portfolio✌️</h1>
 
 <div align="center">
-    <a href="https://portfolio-ivanosquis-iv.vercel.app/" target="_blank">
+    <a href="https://portfolio-raulromero.vercel.app/" target="_blank">
         Website
     </a>
     <span>&nbsp;⁘&nbsp;</span>
@@ -11,9 +11,7 @@
         Stack
     </a>
     <span>&nbsp;⁘&nbsp;</span>
-    <a href="https://twitter.com/ivanosquis13" target="_blank">
-        Twitter
-    </a>
+    
 </div>
 
 </p>
@@ -56,5 +54,5 @@ Open up [http://localhost:3000](http://localhost:3000) to view the website 🚀.
 
 ## Authors
 
-- [@ivanosquis10](https://www.github.com/ivanosquis10)
+- [@hulkobain](https://www.github.com/hulkobain)
 
