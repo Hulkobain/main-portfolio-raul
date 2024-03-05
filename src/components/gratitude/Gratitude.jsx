@@ -31,16 +31,13 @@ export function Gratitude() {
           </Link>
 
           <Link
-            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-transparent px-6 py-2 font-medium shadow-md backdrop-blur-sm duration-500 md:flex-1"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-bold text-black md:flex-1 "
             href="https://raulromero.netlify.app/images/CV_RaulRomero.pdf"
             rel="noreferrer"
             target="_blank"
           >
-            <div className="translate-y-0 font-bold transition group-hover:-translate-y-[150%]">
-              CV
-            </div>
-            <div className="absolute translate-y-[150%] transition group-hover:translate-y-0">
-              <Eye l stroke="2.5" />
+            <span>CV</span>
+            <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-1 group-hover:opacity-100">
             </div>
           </Link>
         </div>
