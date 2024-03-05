@@ -46,7 +46,7 @@ export const projects = [
     id: 3,
     title: "Weather App",
     description:
-      "☀️​ weather application to check the weather in your city",
+      "☀️​ Weather application to check the weather in your city",
     image: "/img/budget.webp",
     stack: ["js", "html", "css"],
     github: "https://github.com/Hulkobain/App-tiempo",
