@@ -29,6 +29,20 @@ export function Gratitude() {
               <Mail />
             </div>
           </Link>
+
+          <Link
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-transparent px-6 py-2 font-medium shadow-md backdrop-blur-sm duration-500 md:flex-1"
+            href="https://raulromero.netlify.app/images/CV_RaulRomero.pdf"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <div className="translate-y-0 font-bold transition group-hover:-translate-y-[150%]">
+              CV
+            </div>
+            <div className="absolute translate-y-[150%] transition group-hover:translate-y-0">
+              <Eye l stroke="2.5" />
+            </div>
+          </Link>
         </div>
       </div>
     </section>
