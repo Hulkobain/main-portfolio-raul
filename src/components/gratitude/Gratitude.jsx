@@ -20,7 +20,7 @@ export function Gratitude() {
          
           <Link
             className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-bold text-black md:flex-1 "
-            href="raul.romero.6696@gmail.com"
+            href="mailto:raul.romero.6696@gmail.com"
             rel="noreferrer"
             target="_blank"
           >
