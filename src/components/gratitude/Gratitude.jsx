@@ -17,7 +17,7 @@ export function Gratitude() {
         </div>
 
         <div className="mx-auto flex w-full flex-col items-center justify-center gap-2 md:max-w-xl md:flex-row md:gap-4">
-         
+    
           <Link
             className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-white px-6 py-2 font-bold text-black md:flex-1 "
             href="mailto:raul.romero.6696@gmail.com"
