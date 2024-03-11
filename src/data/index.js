@@ -41,7 +41,17 @@ export const projects = [
     demo: "https://manage-expenses-main.vercel.app/",
     change: true,
   },
-
+  {
+    id: 2,
+    title: "Quiz-Resolve",
+    description:
+      "🧩 Is an interactive quiz developed with ViteJS, React and Tailwind CSS. It uses Zustand and React Router DOM for navigation and management :)",
+    image: "/img/devquiz.webp",
+    stack: ["vitejs", "typescript", "tailwind", "react-router-dom"],
+    github: "https://github.com/hulkobain/quiz-main",
+    demo: "https://solve-quiz.vercel.app/",
+    change: true,
+  },
   {
     id: 3,
     title: "Weather App",
