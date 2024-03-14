@@ -37,7 +37,7 @@ export const projects = [
       "📝​ Web application that serves to keep track of your daily expenses",
     image: "/img/bolivar.webp",
     stack: ["react", "typescript", "vitejs", "tailwind"],
-    github: "https://github.com/ivanosquis10/bolivarium-conversor",
+    github: "https://github.com/Hulkobain/manage-expenses-main",
     demo: "https://manage-expenses-main.vercel.app/",
     change: true,
   },
