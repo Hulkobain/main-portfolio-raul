@@ -2,7 +2,7 @@
   "name": "raul-romero-nextjs",
   "version": "0.1.0",
   "private": true,
-  "author": "Iván Rodríguez",
+  "author": "Raúl Romero",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
