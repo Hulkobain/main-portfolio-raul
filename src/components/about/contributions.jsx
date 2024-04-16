@@ -6,7 +6,7 @@ export function Contributions() {
   return (
     <AboutCard level={4} title="Contributions">
          <p className="mt-3 leading-snug text-zinc-200">
-        <span className="span-badge">Full-Stack Developer</span> <br />Mediacom360 | 2023 - 2024 <br />
+        <span className="span-badge">Full-Stack Developer</span> <br /> Mediacom360 | 2023 - 2024 <br />
 
 
         <span className="span-badge">Web Application Development</span> <br />
