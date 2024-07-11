@@ -1,4 +1,5 @@
 import { ShareAndroid } from "iconoir-react"
+import Link from "next/link"
 
 export function FooterAbout() {
   return (
