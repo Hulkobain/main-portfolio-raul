@@ -9,8 +9,7 @@ export function Education() {
       </p>
       <p className="mt-2 text-zinc-200">
         I have obtained valuable certifications in specialized{" "}
-        <span className="span-badge">Java, SpringBoot, Angular and React</span> courses through recognized
-        educational platforms such as Udemy, under the expert guidance of professor Andrés Guzmán.
+        <span className="span-badge">Java and SpringBoot</span> for the backend and <span className="span-badge">Angular, React and Vue.JS</span> for the frontend. All this through recognized educational platforms such as Udemy, under the expert guidance of Professor Andrés Guzmán and Victor Robles.
       </p>
     </AboutCard>
   )
