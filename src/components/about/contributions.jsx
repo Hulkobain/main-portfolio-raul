@@ -11,7 +11,7 @@ export function Contributions() {
 
         <span className="span-badge">Web Application Development</span> <br />
           - Backend: Spring Boot and Java: Implementation and management of server logic and integration with databases. <br />
-          - Database Management: MySQL <br />
+          - Database Management: MySQL / Optimization of queries and transactions in SQL databases to improve system speed and efficiency. <br />
           - Frontend: React.JS and tailwind/bootstrap: Dynamic user interface and
           responsive.  <br />
           
