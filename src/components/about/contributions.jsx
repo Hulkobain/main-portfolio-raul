@@ -10,10 +10,11 @@ export function Contributions() {
 
 
         <span className="span-badge">Web Application Development</span> <br />
-          - Backend: Spring Boot and Java <br />
+          - Backend: Spring Boot and Java: Implementation and management of server logic and integration with databases. <br />
           - Database Management: MySQL <br />
-          - Frontend: React.JS and tailwind/bootstrap <br />
-          - User Interface: Intuitive and responsive
+          - Frontend: React.JS and tailwind/bootstrap: Dynamic user interface and
+          responsive.  <br />
+          
       </p>
       <a
         className="group relative mt-2 inline-flex w-full items-center justify-center overflow-hidden rounded-xl bg-zinc-100 px-5 py-2 font-bold text-black shadow-md duration-500"
