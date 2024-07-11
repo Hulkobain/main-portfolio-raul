@@ -1,13 +1,13 @@
-import Link from "next/link"
-import { Github, Linkedin } from "iconoir-react"
+import Link from "next/link";
+import { Github, Linkedin } from "iconoir-react";
 
-import { cn } from "@/libs/utils"
-import { headerLinks } from "@/data"
+import { cn } from "@/libs/utils";
+import { headerLinks } from "@/data";
 
 export function Header() {
-  const iconSize = 23
-  const stroke = "2.5"
-  const className = "text-gray-400 transition-all duration-150"
+  const iconSize = 23;
+  const stroke = "2.5";
+  const className = "text-gray-400 transition-all duration-150";
 
   const socialLinks = [
     {
@@ -38,7 +38,7 @@ export function Header() {
         />
       ),
     },
-  ]
+  ];
 
   return (
     <div className="top-0 z-40 w-full bg-zinc-900/50 py-3 font-medium backdrop-blur md:sticky">
@@ -57,21 +57,25 @@ export function Header() {
           <div className="mt-3 flex flex-col items-center justify-center space-y-3 md:mt-0 md:flex-row md:space-x-7 md:space-y-0">
             <div className="flex flex-row space-x-7">
               {headerLinks.map((link) => (
-                <Link
-                  key={link.title}
-                  className="text-sm text-gray-400 transition-all duration-150 hover:text-gray-100"
-                  href={link.url}
-                >
-                  {link.url}
-                </Link>
+                link.url && (
+                  <Link
+                    key={link.title}
+                    className="text-sm text-gray-400 transition-all duration-150 hover:text-gray-100"
+                    href={link.url}
+                  >
+                    {link.title}
+                  </Link>
+                )
               ))}
             </div>
             <div>
               <div className="flex items-center justify-center space-x-5 border-neutral-700 md:border-l md:pl-6">
                 {socialLinks.map((link) => (
-                  <Link key={link.title} href={link.href}>
-                    {link.icon}
-                  </Link>
+                  link.href && (
+                    <Link key={link.id} href={link.href}>
+                      {link.icon}
+                    </Link>
+                  )
                 ))}
               </div>
             </div>
@@ -79,5 +83,5 @@ export function Header() {
         </div>
       </div>
     </div>
-  )
+  );
 }

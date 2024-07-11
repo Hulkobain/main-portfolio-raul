@@ -1,9 +1,7 @@
-import Link from "next/link"
-import { MapsArrowDiagonal } from "iconoir-react"
-
-import { GitHubIcon } from "../icons/Icons"
-
-import { CardSpotlight } from "@/components"
+import Link from "next/link";
+import { MapsArrowDiagonal } from "iconoir-react";
+import { GitHubIcon } from "../icons/Icons";
+import { CardSpotlight } from "@/components";
 
 export function ProjectCard({ title, description, stack, github, demo }) {
   return (
@@ -12,18 +10,22 @@ export function ProjectCard({ title, description, stack, github, demo }) {
         <div className="mb-2 flex items-center justify-between">
           <h2 className="text-2xl font-semibold leading-none tracking-tight">{title}</h2>
           <div className="flex items-center gap-2">
-            <Link href={demo} rel="noopener" target="_blank" title="Demo">
-              <MapsArrowDiagonal className="h-6 w-6 text-gray-400 transition-all hover:animate-waving-hand hover:text-gray-100" />
-            </Link>
-            <Link
-              className="text-gray-400 transition-all hover:text-gray-100 "
-              href={github}
-              rel="noopener"
-              target="_blank"
-              title="Repository"
-            >
-              <GitHubIcon />
-            </Link>
+            {demo && (
+              <Link href={demo} rel="noopener" target="_blank" title="Demo">
+                <MapsArrowDiagonal className="h-6 w-6 text-gray-400 transition-all hover:animate-waving-hand hover:text-gray-100" />
+              </Link>
+            )}
+            {github && (
+              <Link
+                className="text-gray-400 transition-all hover:text-gray-100 "
+                href={github}
+                rel="noopener"
+                target="_blank"
+                title="Repository"
+              >
+                <GitHubIcon />
+              </Link>
+            )}
           </div>
         </div>
         <p className="text-pretty text-sm text-gray-400">{description}</p>
@@ -50,5 +52,5 @@ export function ProjectCard({ title, description, stack, github, demo }) {
         </div>
       </div>
     </CardSpotlight>
-  )
+  );
 }

@@ -1,7 +1,9 @@
-import Link from "next/link"
-import { FastArrowRight } from "iconoir-react"
+import Link from "next/link";
+import { FastArrowRight } from "iconoir-react";
 
 export function Hero() {
+  const href = "/contact"; // Definimos el href explícitamente
+
   return (
     <section className="flex animate-fade items-center justify-between">
       <div className="relative flex max-w-5xl flex-1 flex-col items-start gap-2 px-4 py-10 md:px-0">
@@ -18,23 +20,30 @@ export function Hero() {
 
         <p className="text-pretty text-5xl font-extrabold md:text-6xl">
           <span className="text-emerald-300">FULL-STACK DEVELOPER</span>{" "}
-          <span className="text-pink-300">PORTFOLIO</span> 
+         
+        </p>
+
+        <p className="text-5xl font-extrabold text-pretty md:text-6xl">
+          I build <span className="text-pink-300">web applications.</span>{" "}
+          Passionate about development and life.
         </p>
 
         <div className="relative mt-2 w-full md:ml-2">
-          <Link
-            className="focus:ring-zinc-emerald-400 group relative inline-flex w-full items-center justify-center overflow-hidden rounded-lg bg-zinc-100 px-5 py-2 font-bold text-black duration-500 hover:scale-95 hover:ring-4 hover:ring-emerald-400 focus:outline-none focus:ring-2 md:w-1/4"
-            href="contact"
-          >
-            <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
-              Let&apos;s talk
-            </span>
-            <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
-              <FastArrowRight />
-            </div>
-          </Link>
+          {href && (
+            <Link
+              className="focus:ring-zinc-emerald-400 group relative inline-flex w-full items-center justify-center overflow-hidden rounded-lg bg-zinc-100 px-5 py-2 font-bold text-black duration-500 hover:scale-95 hover:ring-4 hover:ring-emerald-400 focus:outline-none focus:ring-2 md:w-1/4"
+              href={href}
+            >
+              <span className="translate-x-0 opacity-100 transition group-hover:-translate-x-[150%] group-hover:opacity-0">
+                Let&apos;s talk
+              </span>
+              <div className="absolute translate-x-[150%] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100">
+                <FastArrowRight />
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </section>
-  )
+  );
 }
