@@ -46,7 +46,7 @@ export const projects = [
     title: "MicroServices-Hotel",
     description:
       "​​💻 This project is developed in Java using Spring and is designed to be scalable, efficient and resilient.",
-    stack: ["java", "spring", "kafka", "mysql"],
+    stack: ["java", "spring", "kafka", "mysql", "docker"],
     github: "https://github.com/Hulkobain/microservices-hotel",
   },
   
