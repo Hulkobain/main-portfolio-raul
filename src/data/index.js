@@ -47,7 +47,7 @@ export const projects = [
     description:
       "​​💻 This project is developed in Java using Spring and is designed to be scalable, efficient and resilient.",
     stack: ["java", "spring", "kafka", "mysql"],
-    github: "https://github.com/Hulkobain/JWT-APIREST",
+    github: "https://github.com/Hulkobain/microservices-hotel",
   },
   
   ,
