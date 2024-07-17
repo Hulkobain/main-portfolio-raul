@@ -62,5 +62,13 @@ export const SKILLS = [
     title: "Hibernate",
     logo: "hibernate",
   },
+  {
+    title: "Spring",
+    logo: "spring",
+  },
+  {
+    title: "Springboot",
+    logo: "springboot",
+  },
 ]
 

@@ -46,7 +46,7 @@ export const projects = [
     title: "API-REST & JWT",
     description:
       "​​💻 Secure REST API developed using Spring Boot. It includes advanced security features such as JWT (JSON Web Token) authentication and password encryption to ensure user data is protected.",
-    stack: ["java"],
+    stack: ["java", "springboot"],
     github: "https://github.com/Hulkobain/JWT-APIREST",
   },
   {
