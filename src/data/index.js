@@ -43,6 +43,16 @@ export const projects = [
   },
   {
     id: 2,
+    title: "MicroServices-Hotel",
+    description:
+      "​​💻 This project is developed in Java using Spring and is designed to be scalable, efficient and resilient.",
+    stack: ["java", "spring", "kafka", "mysql"],
+    github: "https://github.com/Hulkobain/JWT-APIREST",
+  },
+  
+  ,
+  {
+    id: 3,
     title: "API-REST & JWT",
     description:
       "​​💻 Secure REST API developed using Spring Boot. It includes advanced security features such as JWT (JSON Web Token) authentication and password encryption to ensure user data is protected.",
@@ -50,7 +60,7 @@ export const projects = [
     github: "https://github.com/Hulkobain/JWT-APIREST",
   },
   {
-    id: 3,
+    id: 4,
     title: "Quiz-Resolve",
     description:
       "🧩 Is an interactive quiz developed with ViteJS, React and Tailwind CSS. It uses Zustand and React Router DOM for navigation and management :)",
@@ -61,7 +71,7 @@ export const projects = [
     change: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "Weather App",
     description:
       "☀️​ Weather application to check the weather in your city",
@@ -72,7 +82,7 @@ export const projects = [
     change: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "CARD 3D",
     description:
       "🤖​ Application that shows cards in 3D :)",
@@ -82,7 +92,7 @@ export const projects = [
     demo: "https://card3d.vercel.app/",
   },
   {
-    id: 6,
+    id: 7,
     title: "Intro Neftlix",
     description:
       "​​🎞️​ Application that shows the Netflix intro",

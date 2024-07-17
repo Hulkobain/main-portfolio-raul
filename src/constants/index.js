@@ -70,5 +70,17 @@ export const SKILLS = [
     title: "Springboot",
     logo: "springboot",
   },
+  {
+    title: "Docker",
+    logo: "docker",
+  },
+  {
+    title: "MySql",
+    logo: "mysql",
+  },
+  {
+    title: "Kafka",
+    logo: "kafka",
+  },
 ]
 
