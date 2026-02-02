@@ -4,22 +4,22 @@ import { GitHubIcon } from "../icons/Icons";
 import { CardSpotlight } from "@/components";
 
 export function ProjectCard({ title, description, stack, github, demo, image }) {
+  const previewImage = image || "/detail.webp";
+
   return (
     <CardSpotlight className="group h-full rounded-xl border border-zinc-800/60 bg-zinc-900/40">
       <div className="flex h-full w-full flex-col overflow-hidden rounded-xl">
-        {image && (
-          <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-zinc-800/60">
-            <img
-              alt={`${title} preview`}
-              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-              height={360}
-              loading="lazy"
-              src={image}
-              width={640}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
-          </div>
-        )}
+        <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-zinc-800/60">
+          <img
+            alt={`${title} preview`}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+            height={360}
+            loading="lazy"
+            src={previewImage}
+            width={640}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
+        </div>
 
         <div className="flex h-full flex-col gap-3 p-5">
           <div className="flex items-start justify-between gap-4">
@@ -28,7 +28,7 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
             </h3>
           </div>
 
-          <p className="text-pretty text-sm text-zinc-300 md:text-base">
+          <p className="line-clamp-3 text-pretty text-sm text-zinc-300 md:text-base">
             {description}
           </p>
 
