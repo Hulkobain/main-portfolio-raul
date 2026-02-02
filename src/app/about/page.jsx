@@ -19,12 +19,18 @@ export default function AboutMe() {
       <div className="animate-fade-right">
         <HeaderAbout />
       </div>
-      <div className="mt-6 grid animate-fade-up grid-cols-1 gap-4 sm:mt-7 sm:gap-6 md:grid-cols-2 md:auto-rows-fr">
+      <div className="mt-6 grid animate-fade-up grid-cols-1 gap-4 sm:mt-7 sm:gap-6 md:grid-cols-2">
         <Education />
         <Skills />
-        <Contributions />
-        <MoreAboutMe />
-        <FooterAbout />
+        <div className="md:col-span-2">
+          <Contributions />
+        </div>
+        <div className="md:col-span-2">
+          <MoreAboutMe />
+        </div>
+        <div className="md:col-span-2">
+          <FooterAbout />
+        </div>
       </div>
     </section>
   )
