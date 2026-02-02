@@ -51,7 +51,7 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
             ))}
           </div>
 
-          <div className="mt-auto flex flex-wrap items-center gap-2">
+          <div className="mt-2 flex flex-wrap items-center gap-2">
             {demo && (
               <Link
                 className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-3 py-2 text-xs font-semibold text-black transition hover:scale-[0.98]"
