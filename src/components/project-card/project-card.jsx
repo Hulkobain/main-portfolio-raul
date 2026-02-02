@@ -3,51 +3,77 @@ import { MapsArrowDiagonal } from "iconoir-react";
 import { GitHubIcon } from "../icons/Icons";
 import { CardSpotlight } from "@/components";
 
-export function ProjectCard({ title, description, stack, github, demo }) {
+export function ProjectCard({ title, description, stack, github, demo, image }) {
   return (
-    <CardSpotlight className="rounded-md bg-zinc-800/30">
-      <div className="flex w-full flex-col p-4">
-        <div className="mb-2 flex items-center justify-between">
-          <h2 className="text-2xl font-semibold leading-none tracking-tight">{title}</h2>
-          <div className="flex items-center gap-2">
+    <CardSpotlight className="group h-full rounded-xl border border-zinc-800/60 bg-zinc-900/40">
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-xl">
+        {image && (
+          <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-zinc-800/60">
+            <img
+              alt={`${title} preview`}
+              className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+              height={360}
+              loading="lazy"
+              src={image}
+              width={640}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
+          </div>
+        )}
+
+        <div className="flex h-full flex-col gap-3 p-5">
+          <div className="flex items-start justify-between gap-4">
+            <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">
+              {title}
+            </h3>
+          </div>
+
+          <p className="text-pretty text-sm text-zinc-300 md:text-base">
+            {description}
+          </p>
+
+          <div className="mt-1 flex flex-wrap gap-2">
+            {stack.map((item) => (
+              <span
+                key={item}
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-800/70 bg-zinc-900/70 px-3 py-1 text-xs font-semibold text-zinc-200"
+              >
+                <img
+                  alt=""
+                  className="h-4 w-4"
+                  height={16}
+                  loading="lazy"
+                  src={`/skillsImg/${item}.svg`}
+                  width={16}
+                />
+                <span className="uppercase tracking-wide text-zinc-300">{item}</span>
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-auto flex flex-wrap items-center gap-2">
             {demo && (
-              <Link href={demo} rel="noopener" target="_blank" title="Demo">
-                <MapsArrowDiagonal className="h-6 w-6 text-gray-400 transition-all hover:animate-waving-hand hover:text-gray-100" />
+              <Link
+                className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-3 py-2 text-xs font-semibold text-black transition hover:scale-[0.98]"
+                href={demo}
+                rel="noopener"
+                target="_blank"
+              >
+                Live demo
+                <MapsArrowDiagonal className="h-4 w-4" />
               </Link>
             )}
             {github && (
               <Link
-                className="text-gray-400 transition-all hover:text-gray-100 "
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-700/70 px-3 py-2 text-xs font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200"
                 href={github}
                 rel="noopener"
                 target="_blank"
-                title="Repository"
               >
+                View code
                 <GitHubIcon />
               </Link>
             )}
-          </div>
-        </div>
-        <p className="text-pretty text-sm text-gray-400">{description}</p>
-        <div className="mt-3 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            {stack.map((item) => (
-              <div
-                key={item}
-                className="rounded border border-neutral-800 bg-neutral-900 px-2 py-1 font-mono text-xs"
-              >
-                <span className="sr-only">{item} icon</span>
-                <img
-                  alt={`${item} icon`}
-                  className="w-6 object-cover md:w-7"
-                  height={25}
-                  loading="lazy"
-                  src={`/skillsImg/${item}.svg`}
-                  title={item}
-                  width={25}
-                />
-              </div>
-            ))}
           </div>
         </div>
       </div>

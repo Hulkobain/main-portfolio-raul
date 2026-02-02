@@ -50,13 +50,15 @@ export function Projects() {
         </div>
       </div>
 
-      <div className="relative grid gap-10 md:grid-cols-2">
-        {filteredProjects.map(({ id, title, description, stack, github, demo }) => (
+      <div className="relative grid gap-8 md:grid-cols-2 md:auto-rows-fr">
+        {filteredProjects.map(
+          ({ id, title, description, stack, github, demo, image }) => (
           <ProjectCard
             key={id}
             demo={demo}
             description={description}
             github={github}
+            image={image}
             stack={stack}
             title={title}
           />
