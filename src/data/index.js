@@ -35,7 +35,7 @@ export const projects = [
     title: "Manage-Expenses",
     description:
       "📝​ Web application that serves to keep track of your daily expenses",
-    image: "/img/bolivar.webp",
+    image: "/img/budget.webp",
     stack: ["react", "typescript", "vitejs", "tailwind"],
     github: "https://github.com/Hulkobain/manage-expenses-main",
     demo: "https://manage-expenses-main.vercel.app/",
@@ -75,7 +75,7 @@ export const projects = [
     title: "Weather App",
     description:
       "☀️​ Weather application to check the weather in your city",
-    image: "/img/budget.webp",
+    image: "/img/devquiz.webp",
     stack: ["js", "html", "css"],
     github: "https://github.com/Hulkobain/App-tiempo",
     demo: "https://app-tiempo.vercel.app/",
@@ -86,7 +86,6 @@ export const projects = [
     title: "CARD 3D",
     description:
       "🤖​ Application that shows cards in 3D :)",
-    image: "/img/devquiz.webp",
     stack: ["js", "html", "css"],
     github: "https://github.com/Hulkobain/Cartas-3D",
     demo: "https://card3d.vercel.app/",
