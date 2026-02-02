@@ -15,11 +15,11 @@ export const metadata = {
 
 export default function AboutMe() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-0">
+    <section className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-0 sm:py-10">
       <div className="animate-fade-right">
         <HeaderAbout />
       </div>
-      <div className="mt-6 grid animate-fade-up grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="mt-6 grid animate-fade-up grid-cols-1 gap-4 sm:mt-7 sm:gap-6 md:grid-cols-2">
         <Education />
         <Skills />
         <Contributions />

@@ -3,7 +3,7 @@ import { AboutCard } from "@/components"
 export function MoreAboutMe() {
   return (
     <AboutCard level={4} title="More about me">
-       <ul className="mt-3 list-inside list-disc space-y-1 tracking-tighter text-zinc-300 ">
+      <ul className="mt-4 list-inside list-disc space-y-1 tracking-tighter text-zinc-300 sm:space-y-2">
         <li>
         <span className="span-badge">Proactive, responsible and committed</span> with my
           work.
