@@ -9,22 +9,24 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-0">
+    <section className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-0 sm:py-10">
       <div className="animate-fade-right">
         <span className="inline-block text-xl font-semibold leading-tight text-emerald-400">
           Let's talk
         </span>
-        <Heading level={2}>CONTACT ME</Heading>
+        <Heading level={2}>Contact me</Heading>
 
-        <p className="mt-1 leading-relaxed text-gray-200">
-        Thank you for visiting my portfolio. I am glad you took the time to learn about my work. <br />
-
-
-        If you are interested in learning more about my work or if you would like to contact me to discuss a potential project, please do not hesitate.
-        </p>
+        <div className="mt-2 space-y-2 text-gray-200">
+          <p className="leading-relaxed">
+            Thank you for visiting my portfolio. I am glad you took the time to learn about my work.
+          </p>
+          <p className="leading-relaxed">
+            If you are interested in learning more about my work or if you would like to contact me to discuss a potential project, please do not hesitate.
+          </p>
+        </div>
       </div>
 
-      <div className="mx-auto mt-6 grid max-w-4xl animate-fade-up grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="mx-auto mt-6 grid max-w-4xl animate-fade-up grid-cols-1 gap-4 sm:mt-7 sm:gap-6 md:grid-cols-2">
         {contact.map(({ id, url, icon, title, subtitle }) => (
           <ContactCard key={id} icon={icon} subtitle={subtitle} title={title} url={url} />
         ))}
