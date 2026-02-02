@@ -50,6 +50,12 @@ export function Hero() {
               <FastArrowRight />
             </div>
           </Link>
+          <Link
+            className="inline-flex w-full items-center justify-center rounded-lg border border-zinc-700/60 bg-transparent px-5 py-2 font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200 md:w-auto"
+            href="/cv"
+          >
+            View CV
+          </Link>
           {href && (
             <Link
               className="inline-flex w-full items-center justify-center rounded-lg border border-zinc-700/60 bg-transparent px-5 py-2 font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200 md:w-auto"
