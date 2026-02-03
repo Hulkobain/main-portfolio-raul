@@ -21,14 +21,14 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
         </div>
 
-        <div className="flex h-full flex-col gap-3 p-5">
+        <div className="flex h-full flex-col gap-2 p-4">
           <div className="flex items-start justify-between gap-4">
             <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">
               {title}
             </h3>
           </div>
 
-          <p className="line-clamp-3 text-pretty text-sm text-zinc-300 md:text-base">
+          <p className="line-clamp-3 text-pretty text-sm text-zinc-300">
             {description}
           </p>
 
@@ -51,10 +51,10 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
             ))}
           </div>
 
-          <div className="mt-2 flex flex-wrap items-center gap-2">
+          <div className="mt-1 flex flex-wrap items-center gap-2">
             {demo && (
               <Link
-                className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-3 py-2 text-xs font-semibold text-black transition hover:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-lg bg-zinc-100 px-3 py-1.5 text-xs font-semibold text-black transition hover:scale-[0.98]"
                 href={demo}
                 rel="noopener"
                 target="_blank"
@@ -65,7 +65,7 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
             )}
             {github && (
               <Link
-                className="inline-flex items-center gap-2 rounded-lg border border-zinc-700/70 px-3 py-2 text-xs font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200"
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-700/70 px-3 py-1.5 text-xs font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200"
                 href={github}
                 rel="noopener"
                 target="_blank"
