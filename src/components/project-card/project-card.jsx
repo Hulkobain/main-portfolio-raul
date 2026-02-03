@@ -9,11 +9,11 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
   return (
     <CardSpotlight className="group rounded-xl border border-zinc-800/60 bg-zinc-900/40">
       <div className="flex w-full flex-col overflow-hidden rounded-xl">
-        <div className="relative aspect-[2/1] w-full overflow-hidden border-b border-zinc-800/60">
+        <div className="relative h-[180px] w-full overflow-hidden border-b border-zinc-800/60">
           <img
             alt={`${title} preview`}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-            height={360}
+            height={180}
             loading="lazy"
             src={previewImage}
             width={640}
