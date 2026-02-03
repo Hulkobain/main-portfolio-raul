@@ -21,7 +21,7 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
         </div>
 
-        <div className="flex h-full flex-col gap-2 p-4">
+        <div className="flex h-full flex-col gap-2 p-3 pb-2">
           <div className="flex items-start justify-between gap-4">
             <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">
               {title}
