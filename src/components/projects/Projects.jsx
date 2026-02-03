@@ -50,7 +50,7 @@ export function Projects() {
         </div>
       </div>
 
-      <div className="relative grid gap-8 md:grid-cols-2 md:auto-rows-fr">
+      <div className="relative grid gap-8 md:grid-cols-2">
         {filteredProjects.map(
           ({ id, title, description, stack, github, demo, image }) => (
           <ProjectCard
