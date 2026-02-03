@@ -7,8 +7,8 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
   const previewImage = image || "/detail.webp";
 
   return (
-    <CardSpotlight className="group h-full rounded-xl border border-zinc-800/60 bg-zinc-900/40">
-      <div className="flex h-full w-full flex-col overflow-hidden rounded-xl">
+    <CardSpotlight className="group rounded-xl border border-zinc-800/60 bg-zinc-900/40">
+      <div className="flex w-full flex-col overflow-hidden rounded-xl">
         <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-zinc-800/60">
           <img
             alt={`${title} preview`}
@@ -21,7 +21,7 @@ export function ProjectCard({ title, description, stack, github, demo, image }) 
           <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 to-transparent" />
         </div>
 
-        <div className="flex h-full flex-col gap-2 p-3 pb-2">
+        <div className="flex flex-col gap-2 p-2 pb-0">
           <div className="flex items-start justify-between gap-4">
             <h3 className="text-xl font-semibold leading-tight tracking-tight md:text-2xl">
               {title}
