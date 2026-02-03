@@ -75,7 +75,7 @@ export const projects = [
     title: "Weather App",
     description:
       "☀️​ Weather application to check the weather in your city",
-    image: "/img/devquiz.webp",
+    image: "/img/weather.svg",
     stack: ["js", "html", "css"],
     github: "https://github.com/Hulkobain/App-tiempo",
     demo: "https://app-tiempo.vercel.app/",
