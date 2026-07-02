@@ -1,10 +1,14 @@
-import { Heading } from ".."
+import { Heading } from "@/components";
+import { cn } from "@/libs/utils";
 
-export function AboutCard({ children, title, level }) {
+export function AboutCard({ children, title, eyebrow, level = 3, className }) {
   return (
-    <div className="h-full rounded-md border border-zinc-800 bg-zinc-800/30 p-3 leading-relaxed transition-all hover:ring-2 hover:ring-emerald-600 sm:p-4">
+    <article
+      className={cn("glass-panel h-full rounded-[2rem] p-6 sm:p-8", className)}
+    >
+      {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
       <Heading level={level}>{title}</Heading>
       {children}
-    </div>
-  )
+    </article>
+  );
 }

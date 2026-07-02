@@ -4,43 +4,186 @@
 
 @layer base {
   :root {
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
+    color-scheme: light;
+    --canvas: 245 244 240;
+    --surface: 255 255 255;
+    --surface-raised: 236 237 234;
+    --line: 213 219 221;
+    --ink: 17 21 27;
+    --muted: 89 99 110;
+    --brand: 8 123 91;
+    --brand-soft: 213 248 235;
+    --violet: 101 86 216;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --canvas: 7 9 13;
+    --surface: 13 17 23;
+    --surface-raised: 20 26 34;
+    --line: 38 48 65;
+    --ink: 244 247 251;
+    --muted: 152 164 179;
+    --brand: 94 233 181;
+    --brand-soft: 13 53 42;
+    --violet: 155 140 255;
+  }
+
+  * {
+    border-color: rgb(var(--line) / 0.65);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
   }
 
   body {
+    min-height: 100vh;
     cursor: default;
+    background-color: rgb(var(--canvas));
+    color: rgb(var(--ink));
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(var(--brand) / 0.28);
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 4px;
   }
 }
 
-.pattern-dots {
-  background-image: radial-gradient(#00ffaa69 1.5px, transparent 1px);
-  background-size: calc(10 * 2px) calc(10 * 2px)
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .glass-panel {
+    @apply border border-line/70 bg-surface/75 shadow-2xl shadow-black/[0.04] backdrop-blur-xl dark:shadow-black/20;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-brand sm:text-xs;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-bold text-canvas transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-4 focus-visible:ring-offset-canvas motion-reduce:transform-none;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-line bg-surface/55 px-5 py-2.5 text-sm font-bold text-ink transition duration-300 hover:-translate-y-0.5 hover:border-brand/50 hover:bg-brand/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-4 focus-visible:ring-offset-canvas motion-reduce:transform-none;
+  }
+
+  .tech-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-line/70 bg-canvas/60 px-3 py-1.5 font-mono text-[0.68rem] font-semibold uppercase tracking-wide text-muted;
+  }
 }
 
-.span-badge {
-  @apply font-semibold text-emerald-400
+.portfolio-background {
+  isolation: isolate;
+  position: relative;
 }
 
-.button-ligth-dark {
-  @apply flex items-center justify-center flex-1 gap-2 px-4 py-2 mt-3 font-semibold duration-300 ease-in-out shadow-md md:flex-none hover:bg-zinc-800/30 bg-zinc-200 hover:text-white text-black
+.portfolio-background::before {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 12% 8%,
+      rgb(var(--brand) / 0.13),
+      transparent 28rem
+    ),
+    radial-gradient(
+      circle at 88% 26%,
+      rgb(var(--violet) / 0.1),
+      transparent 30rem
+    ),
+    rgb(var(--canvas));
 }
 
-.button-ligth {
-  @apply flex items-center justify-center flex-1 gap-2 px-4 py-2 duration-300 ease-in-out shadow-md md:flex-none bg-zinc-200 text-black
+.portfolio-background::after {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  opacity: 0.55;
+  background-image: linear-gradient(
+      rgb(var(--ink) / 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgb(var(--ink) / 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
 }
 
-.button-dark {
-  @apply flex items-center justify-center flex-1 gap-2 px-4 py-1 mt-3 font-semibold duration-300 ease-in-out shadow md:flex-none bg-zinc-950/50 hover:bg-zinc-200 hover:text-black
+.spotlight-card::before {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  content: "";
+  opacity: 0;
+  transition: opacity 400ms ease;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgb(var(--brand) / 0.17),
+    transparent 42%
+  );
 }
 
-.spotligth {
-  @apply before:absolute before:w-80 before:h-80 before:-left-40 before:-top-40 before:bg-emerald-600 before:rounded-full before:opacity-0 before:pointer-events-none before:transition-opacity before:duration-500 before:translate-x-[var(--mouse-x)] before:translate-y-[var(--mouse-y)] before:group-hover:opacity-100 before:z-10 before:blur-[100px] after:absolute after:w-80 after:h-80 after:-left-48 after:-top-48 after:bg-emerald-400 after:rounded-full after:opacity-0 after:pointer-events-none after:transition-opacity after:duration-500 after:translate-x-[var(--mouse-x)] after:translate-y-[var(--mouse-y)] after:hover:opacity-10 after:-z-0 after:blur-[100px] overflow-hidden
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
 }
 
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.text-gradient {
+  color: transparent;
+  background: linear-gradient(
+    110deg,
+    rgb(var(--brand)),
+    rgb(var(--violet)) 75%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.project-image-mask {
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
+}
+
+.reveal-section {
+  animation: reveal-section 700ms ease-out both;
+}
+
+@keyframes reveal-section {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

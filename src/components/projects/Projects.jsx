@@ -1,69 +1,72 @@
-"use client"
+"use client";
 
-import { useMemo, useState } from "react"
-import { ProjectCard } from "@/components"
-import { projects } from "@/data"
+import { useMemo, useState } from "react";
+
+import { ProjectCard } from "@/components";
+import { projects } from "@/data";
+
+const filters = ["All", "Production", "Frontend", "Backend"];
 
 export function Projects() {
-  const [activeTag, setActiveTag] = useState("All")
-  const tags = useMemo(() => {
-    const unique = new Set(projects.flatMap((project) => project.stack))
-    return ["All", ...Array.from(unique)]
-  }, [])
+  const [activeFilter, setActiveFilter] = useState("All");
 
-  const filteredProjects =
-    activeTag === "All"
-      ? projects
-      : projects.filter((project) => project.stack.includes(activeTag))
+  const filteredProjects = useMemo(
+    () =>
+      activeFilter === "All"
+        ? projects
+        : projects.filter((project) =>
+            project.categories.includes(activeFilter),
+          ),
+    [activeFilter],
+  );
 
   return (
-    <section className="my-16 animate-fade-up px-2 md:px-1" id="projects">
-      <div className="mb-6 flex flex-col gap-4">
+    <section className="section-shell reveal-section py-20" id="projects">
+      <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-            Selected work
-          </p>
-          <h2 className="text-3xl font-bold text-white md:text-4xl">Projects</h2>
-          <p className="mt-2 max-w-2xl text-pretty text-sm text-zinc-400 md:text-base">
-            Browse by tech stack and explore live demos or repositories.
+          <p className="eyebrow">Selected work</p>
+          <h2 className="mt-3 max-w-2xl font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
+            Products, systems and useful experiments.
+          </h2>
+          <p className="mt-4 max-w-2xl text-pretty leading-7 text-muted">
+            A mix of production work, product interfaces and backend
+            architecture — each shaped around a different kind of problem.
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
-          {tags.map((tag) => (
+        <div
+          className="flex flex-wrap items-center gap-2"
+          aria-label="Filter projects"
+        >
+          {filters.map((filter) => (
             <button
-              key={tag}
-              className={`rounded-full border px-3 py-1 text-xs font-semibold transition md:text-sm ${
-                activeTag === tag
-                  ? "border-emerald-400/70 bg-emerald-400/10 text-emerald-200"
-                  : "border-zinc-800/70 bg-zinc-900/40 text-zinc-300 hover:border-emerald-400/50"
+              key={filter}
+              aria-pressed={activeFilter === filter}
+              className={`min-h-10 rounded-full border px-4 py-2 text-xs font-bold transition sm:text-sm ${
+                activeFilter === filter
+                  ? "border-ink bg-ink text-canvas"
+                  : "border-line bg-surface/60 text-muted hover:border-brand/40 hover:text-ink"
               }`}
-              onClick={() => setActiveTag(tag)}
+              onClick={() => setActiveFilter(filter)}
               type="button"
             >
-              {tag}
+              {filter}
             </button>
           ))}
-          <span className="ml-auto text-xs text-zinc-500 md:text-sm">
-            {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"}
+          <span
+            className="ml-1 font-mono text-[0.65rem] text-muted"
+            aria-live="polite"
+          >
+            {String(filteredProjects.length).padStart(2, "0")}
           </span>
         </div>
       </div>
 
-      <div className="relative grid gap-8 md:grid-cols-2">
-        {filteredProjects.map(
-          ({ id, title, description, stack, github, demo, image }) => (
-          <ProjectCard
-            key={id}
-            demo={demo}
-            description={description}
-            github={github}
-            image={image}
-            stack={stack}
-            title={title}
-          />
+      <div className="grid gap-5 md:grid-cols-2">
+        {filteredProjects.map((project) => (
+          <ProjectCard key={project.id} {...project} />
         ))}
       </div>
     </section>
-  )
+  );
 }

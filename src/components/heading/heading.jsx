@@ -1,11 +1,16 @@
-export function Heading({ children, level, variants }) {
-  const HeadingTag = `h${level}`
+import { cn } from "@/libs/utils";
 
+export function Heading({ children, level = 2, variants }) {
+  const HeadingTag = `h${level}`;
   const classes = {
-    h2: "text-3xl font-bold sm:text-4xl",
-    h3: "text-2xl font-bold md:text-3xl",
-    h4: "text-xl font-bold md:text-2xl",
-  }
+    h2: "font-display text-4xl font-semibold tracking-[-0.045em] sm:text-5xl",
+    h3: "font-display text-3xl font-semibold tracking-[-0.035em]",
+    h4: "font-display text-xl font-semibold tracking-[-0.02em] sm:text-2xl",
+  };
 
-  return <HeadingTag className={`${classes[`h${level}`]} ${variants || ""}`}>{children}</HeadingTag>
+  return (
+    <HeadingTag className={cn(classes[`h${level}`], variants)}>
+      {children}
+    </HeadingTag>
+  );
 }

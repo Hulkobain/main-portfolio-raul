@@ -1,22 +1,55 @@
-import "./globals.css"
+import "./globals.css";
 
-import { Footer, Header } from "@/components"
-import { inter } from "@/fonts"
+import { Footer, Header } from "@/components";
+import { manrope, spaceGrotesk } from "@/fonts";
+
+const themeScript = `
+  (() => {
+    try {
+      const saved = localStorage.getItem("portfolio-theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", saved ? saved === "dark" : prefersDark);
+    } catch (_) {}
+  })();
+`;
 
 export const metadata = {
-  title: "Raul Romero | Portfolio",
+  metadataBase: new URL("https://portfolio-raulromero.vercel.app"),
+  title: {
+    default: "Raúl Romero | Full-stack developer",
+    template: "%s | Raúl Romero",
+  },
   description:
-    "Welcome to my programming portfolio, where you can find projects developed in React, Vite.js, NextJS, Tailwind CSS and other technologies, check out my work and contact me to collaborate in your next project!",
-}
+    "Full-stack developer building production-ready web products with React, TypeScript, Java and Spring Boot.",
+};
+
+export const viewport = {
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f4f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#07090d" },
+  ],
+};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} relative h-full overflow-x-hidden bg-zinc-900`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body
+        className={`${manrope.variable} ${spaceGrotesk.variable} portfolio-background min-h-screen overflow-x-hidden font-sans antialiased`}
+      >
+        <a
+          className="sr-only z-[100] rounded-full bg-ink px-4 py-2 text-canvas focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+          href="#main-content"
+        >
+          Skip to content
+        </a>
         <Header />
         {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 }

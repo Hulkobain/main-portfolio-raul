@@ -1,25 +1,23 @@
 import {
-  HeaderAbout,
-  Education,
-  Skills,
   Contributions,
-  MoreAboutMe,
+  Education,
   FooterAbout,
-} from "@/components"
+  HeaderAbout,
+  MoreAboutMe,
+  Skills,
+} from "@/components";
 
 export const metadata = {
-  title: "Raul Romero | About me",
+  title: "About",
   description:
-    "Welcome to my programming portfolio, where you can find projects developed in React, TypeScript, NodeJS, Tailwind CSS and other technologies. I am a passionate developer with experience in different technologies. Learn more about me, my background and my skills in web development and interface design.",
-}
+    "Learn about Raúl Romero's experience, principles and full-stack development toolkit.",
+};
 
 export default function AboutMe() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-8 text-white sm:px-0 sm:py-10">
-      <div className="animate-fade-right">
-        <HeaderAbout />
-      </div>
-      <div className="mt-6 grid animate-fade-up grid-cols-1 gap-4 sm:mt-7 sm:gap-6 md:grid-cols-2">
+    <main className="section-shell" id="main-content">
+      <HeaderAbout />
+      <div className="grid gap-5 md:grid-cols-2">
         <Education />
         <Skills />
         <div className="md:col-span-2">
@@ -28,10 +26,10 @@ export default function AboutMe() {
         <div className="md:col-span-2">
           <MoreAboutMe />
         </div>
-        <div className="md:col-span-2">
+        <div className="pb-20 md:col-span-2">
           <FooterAbout />
         </div>
       </div>
-    </section>
-  )
+    </main>
+  );
 }

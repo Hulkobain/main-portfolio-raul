@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import Head from "next/head"
+import Head from "next/head";
 
 export function Seo() {
   return (
@@ -25,5 +25,5 @@ export function Seo() {
 
       <title>Raul Romero Portfolio | Full-Stack</title>
     </Head>
-  )
+  );
 }

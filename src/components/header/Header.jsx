@@ -1,87 +1,69 @@
-import Link from "next/link";
 import { Github, Linkedin } from "iconoir-react";
+import Link from "next/link";
 
-import { cn } from "@/libs/utils";
+import { ThemeToggle } from "@/components/theme-toggle/ThemeToggle";
 import { headerLinks } from "@/data";
 
 export function Header() {
-  const iconSize = 23;
-  const stroke = "2.5";
-  const className = "text-gray-400 transition-all duration-150";
-
-  const socialLinks = [
-    {
-      id: 2,
-      name: "GitHub",
-      href: "https://github.com/hulkobain",
-      icon: (
-        <Github
-          className={cn(className, "hover:text-gray-300")}
-          height={iconSize}
-          name="GitHub"
-          stroke={stroke}
-          width={iconSize}
-        />
-      ),
-    },
-    {
-      id: 3,
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/raúl-romero-montoro",
-      icon: (
-        <Linkedin
-          className={cn(className, "hover:text-blue-600")}
-          height={iconSize}
-          name="LinkedIn"
-          stroke={stroke}
-          width={iconSize}
-        />
-      ),
-    },
-  ];
-
   return (
-    <div className="top-0 z-40 w-full bg-zinc-900/50 py-3 font-medium backdrop-blur md:sticky">
-      <div className="mx-auto max-w-6xl p-4 md:p-0">
-        <div className="flex w-full flex-col items-center justify-between md:flex-row">
-          <Link aria-label="logo redirection icon" className="cursor-pointer rounded-lg" href="/">
-            <img
-              alt="Raul logo"
-              className="h-12 w-12 rounded-lg border border-zinc-700 transition-all duration-300 hover:ring-2 hover:ring-green-500 md:h-10 md:w-10"
-              height={35}
-              src="https://github.com/hulkobain.png"
-              width={35}
-            />
-            <span className="sr-only">Raul</span>
+    <header className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-6 sm:pt-4">
+      <div className="glass-panel mx-auto flex max-w-5xl items-center justify-between gap-2 overflow-hidden rounded-2xl px-2.5 py-2.5 sm:gap-3 sm:rounded-full sm:px-4">
+        <Link
+          aria-label="Raúl Romero — home"
+          className="group flex shrink-0 items-center gap-2 rounded-full"
+          href="/"
+        >
+          <span className="flex size-9 items-center justify-center rounded-full bg-ink font-display text-sm font-bold text-canvas transition group-hover:rotate-[-6deg] motion-reduce:transform-none">
+            RR
+          </span>
+          <span className="hidden font-display text-sm font-semibold tracking-tight lg:block">
+            Raúl Romero
+          </span>
+        </Link>
+
+        <nav
+          aria-label="Main navigation"
+          className="min-w-0 flex-1 overflow-x-auto"
+        >
+          <ul className="flex items-center gap-1 whitespace-nowrap">
+            {headerLinks.map((link) => (
+              <li
+                key={link.title}
+                className={link.title === "Stack" ? "hidden sm:block" : ""}
+              >
+                <Link
+                  className="block rounded-full px-2.5 py-2 text-xs font-semibold text-muted transition hover:bg-raised/70 hover:text-ink sm:px-3 sm:text-sm"
+                  href={link.url}
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex shrink-0 items-center gap-1">
+          <Link
+            aria-label="GitHub profile"
+            className="hidden size-10 items-center justify-center rounded-full text-muted transition hover:bg-raised hover:text-ink sm:inline-flex"
+            href="https://github.com/hulkobain"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Github className="size-5" />
           </Link>
-          <div className="mt-3 flex flex-col items-center justify-center space-y-3 md:mt-0 md:flex-row md:space-x-7 md:space-y-0">
-            <div className="flex flex-row space-x-7">
-              {headerLinks.map((link) => (
-                link.url && (
-                  <Link
-                    key={link.title}
-                    className="text-sm text-gray-400 transition-all duration-150 hover:text-gray-100"
-                    href={link.url}
-                  >
-                    {link.title}
-                  </Link>
-                )
-              ))}
-            </div>
-            <div>
-              <div className="flex items-center justify-center space-x-5 border-neutral-700 md:border-l md:pl-6">
-                {socialLinks.map((link) => (
-                  link.href && (
-                    <Link key={link.id} href={link.href}>
-                      {link.icon}
-                    </Link>
-                  )
-                ))}
-              </div>
-            </div>
-          </div>
+          <Link
+            aria-label="LinkedIn profile"
+            className="hidden size-10 items-center justify-center rounded-full text-muted transition hover:bg-raised hover:text-ink md:inline-flex"
+            href="https://www.linkedin.com/in/raúl-romero-montoro"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <Linkedin className="size-5" />
+          </Link>
+          <ThemeToggle />
         </div>
       </div>
-    </div>
+    </header>
   );
 }

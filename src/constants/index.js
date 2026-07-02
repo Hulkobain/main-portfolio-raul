@@ -1,86 +1,39 @@
-export const SKILLS = [
+export const STACK_GROUPS = [
   {
-    title: "JavaScript",
-    logo: "js",
+    title: "Interface",
+    description:
+      "Accessible, responsive product interfaces with a strong eye for detail.",
+    skills: [
+      { title: "React", logo: "react" },
+      { title: "TypeScript", logo: "typescript" },
+      { title: "Next.js", logo: "nextjs" },
+      { title: "Tailwind CSS", logo: "tailwind" },
+      { title: "Vite", logo: "vitejs" },
+    ],
   },
   {
-    title: "TypeScript",
-    logo: "typescript",
+    title: "Backend",
+    description:
+      "Secure services and maintainable domain logic built to evolve.",
+    skills: [
+      { title: "Java", logo: "java" },
+      { title: "Spring", logo: "spring" },
+      { title: "Spring Boot", logo: "springboot" },
+      { title: "Node.js", logo: "node" },
+    ],
   },
   {
-    title: "React",
-    logo: "react",
+    title: "Data & delivery",
+    description:
+      "Reliable data flows, messaging and reproducible delivery environments.",
+    skills: [
+      { title: "MySQL", logo: "mysql" },
+      { title: "PostgreSQL", logo: "postgresql" },
+      { title: "Kafka", logo: "kafka" },
+      { title: "Docker", logo: "docker" },
+      { title: "Git", logo: "git" },
+    ],
   },
-  {
-    title: "TailwindCSS",
-    logo: "tailwind",
-  },
-  {
-    title: "Bootstrap",
-    logo: "bootstrap",
-  },
-  {
-    title: "NodeJS",
-    logo: "node",
-  },
-  {
-    title: "MongoDB",
-    logo: "mongodb",
-  },
-  {
-    title: "Git",
-    logo: "git",
-  },
-  {
-    title: "ViteJS",
-  },
-  {
-    title: "Angular",
-    logo: "angular",
-  },
-  {
-    title: "SpringBoot",
-    logo: "springboot",
-  },
-  {
-    title: "Java",
-    logo: "java",
-  },
-  {
-    title: ".NET",
-    logo: ".net",
-  },
-  {
-    title: "MySQL",
-    logo: "mysql",
-  },
-  {
-    title: "PHP",
-    logo: "php",
-  },
-  {
-    title: "Hibernate",
-    logo: "hibernate",
-  },
-  {
-    title: "Spring",
-    logo: "spring",
-  },
-  {
-    title: "Springboot",
-    logo: "springboot",
-  },
-  {
-    title: "Docker",
-    logo: "docker",
-  },
-  {
-    title: "MySql",
-    logo: "mysql",
-  },
-  {
-    title: "Kafka",
-    logo: "kafka",
-  },
-]
+];
 
+export const SKILLS = STACK_GROUPS.flatMap((group) => group.skills);

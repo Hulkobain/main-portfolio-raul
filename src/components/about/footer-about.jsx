@@ -1,25 +1,19 @@
-import { ShareAndroid } from "iconoir-react";
+import { ArrowUpRight } from "iconoir-react";
 import Link from "next/link";
 
 export function FooterAbout() {
-  const href = "/contact"
-
   return (
-    <div className="rounded-md border border-zinc-800 bg-zinc-800/30 p-3 text-center transition-all hover:ring-2 hover:ring-emerald-600 md:col-span-2">
-      <div className="mx-auto w-full max-w-2xl">
-        <p className="mt-3 leading-snug text-zinc-200">
-          <span className="span-badge">Contact me for any questions or projects!</span>
-        </p>
-        {href && (
-          <Link
-            className="group relative mt-3 inline-flex w-auto items-center justify-center overflow-hidden rounded-xl bg-zinc-100 px-6 py-2 font-bold text-black shadow-md duration-500 sm:px-8"
-            href={href}
-          >
-            Social networks
-            <ShareAndroid className="ml-1" height={24} stroke="2.5" width={24} />
-          </Link>
-        )}
+    <div className="relative overflow-hidden rounded-[2rem] bg-brand-soft p-7 sm:p-10">
+      <p className="eyebrow">Next step</p>
+      <div className="mt-4 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
+        <h2 className="max-w-3xl font-display text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">
+          Let&apos;s turn a clear problem into a useful product.
+        </h2>
+        <Link className="button-primary group shrink-0" href="/contact">
+          Start a conversation
+          <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </Link>
       </div>
     </div>
-  )
+  );
 }

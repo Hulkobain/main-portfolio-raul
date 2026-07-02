@@ -1,24 +1,37 @@
-import { AboutCard } from "@/components"
+import { AboutCard } from "@/components";
+
+const values = [
+  ["Clarity", "I reduce ambiguity in interfaces, code and communication."],
+  ["Ownership", "I care about the result beyond the boundaries of my ticket."],
+  [
+    "Curiosity",
+    "I learn quickly and challenge assumptions before adding complexity.",
+  ],
+  [
+    "Teamwork",
+    "I value useful feedback, shared context and calm collaboration.",
+  ],
+];
 
 export function MoreAboutMe() {
   return (
-    <AboutCard level={4} title="More about me">
-      <ul className="mt-4 list-inside list-disc space-y-1 tracking-tighter text-zinc-300 sm:space-y-2">
-        <li>
-        <span className="span-badge">Proactive, responsible and committed</span> with my
-          work.
-        </li>
-        <li>
-        <span className="span-badge">Rapid learning:</span> I learn quickly and adapt easily to new environments and technologies.
-        </li>
-        <li>
-        <span className="span-badge">Teamwork: </span> I am an effective team player who collaborates effectively with others to achieve common goals.
-        </li>
-        <li>
-        <span className="span-badge">Creativity and determination: </span> I have the ability to find creative solutions to complex problems and am motivated to achieve my goals.</li>
-        <li>Native Spanish, intermediate level of English.</li>
-        <li>I like playing sports, trekking and video games.</li>
-      </ul>
+    <AboutCard eyebrow="Beyond tools" level={3} title="The way I show up">
+      <div className="mt-7 grid gap-3 sm:grid-cols-2">
+        {values.map(([title, description], index) => (
+          <div key={title} className="rounded-2xl bg-raised/55 p-5">
+            <span className="font-mono text-[0.65rem] text-brand">
+              0{index + 1}
+            </span>
+            <h4 className="mt-4 font-display text-lg font-semibold">{title}</h4>
+            <p className="mt-2 text-sm leading-6 text-muted">{description}</p>
+          </div>
+        ))}
+      </div>
+      <p className="mt-6 text-sm leading-6 text-muted">
+        Away from the keyboard, you&apos;ll usually find me training, trekking
+        or playing video games. Native Spanish speaker with intermediate
+        English.
+      </p>
     </AboutCard>
-  )
+  );
 }

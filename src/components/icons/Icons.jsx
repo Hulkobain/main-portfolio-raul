@@ -1,5 +1,3 @@
-
-
 export function EmailIcon({ w = 24, h = 24 }) {
   return (
     <svg
@@ -20,7 +18,7 @@ export function EmailIcon({ w = 24, h = 24 }) {
       <path d="M15 18h6" />
       <path d="M18 15l3 3l-3 3" />
     </svg>
-  )
+  );
 }
 
 export function HeartIcon() {
@@ -41,7 +39,7 @@ export function HeartIcon() {
       <path d="M13 19l-1 1l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 0 1 8.003 5.997" />
       <path d="M19 16l-2 3h4l-2 3" />
     </svg>
-  )
+  );
 }
 
 export function GitHubIcon({ w = 24, h = 24 }) {
@@ -61,7 +59,7 @@ export function GitHubIcon({ w = 24, h = 24 }) {
       <path d="M0 0h24v24H0z" fill="none" stroke="none" />
       <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
     </svg>
-  )
+  );
 }
 
 export function LinkedInIcon({ w = 24, h = 24 }) {
@@ -85,9 +83,8 @@ export function LinkedInIcon({ w = 24, h = 24 }) {
       <path d="M12 16l0 -5" />
       <path d="M16 16v-3a2 2 0 0 0 -4 0" />
     </svg>
-  )
+  );
 }
-
 
 export function DiscordIcon({ w = 24, h = 24 }) {
   return (
@@ -109,10 +106,8 @@ export function DiscordIcon({ w = 24, h = 24 }) {
       <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" />
       <path d="M7 16.5c3.5 1 6.5 1 10 0" />
     </svg>
-  )
+  );
 }
-
-
 
 export function MenuMobileIcon() {
   return (
@@ -133,7 +128,7 @@ export function MenuMobileIcon() {
       <path d="M10 12l10 0" />
       <path d="M6 18l14 0" />
     </svg>
-  )
+  );
 }
 
 export function ArrowRightIcon() {
@@ -155,7 +150,7 @@ export function ArrowRightIcon() {
       <path d="M3 9v6" />
       <path d="M6 9v6" />
     </svg>
-  )
+  );
 }
 
 export function ArrowRightIconFilled({ w = 24, h = 24 }) {
@@ -184,7 +179,7 @@ export function ArrowRightIconFilled({ w = 24, h = 24 }) {
         strokeWidth="0"
       />
     </svg>
-  )
+  );
 }
 
 export function ArrowUpIcon({ w = 24, h = 24 }) {
@@ -213,5 +208,5 @@ export function ArrowUpIcon({ w = 24, h = 24 }) {
         strokeWidth="1.5"
       />
     </svg>
-  )
+  );
 }

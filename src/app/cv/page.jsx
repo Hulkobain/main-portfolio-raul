@@ -1,48 +1,47 @@
+import { Download, NavArrowLeft } from "iconoir-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "CV | Raúl Romero",
+  title: "CV",
   description: "Resume and professional experience of Raúl Romero.",
 };
 
 export default function CVPage() {
   return (
-    <main className="relative mx-auto max-w-6xl px-4 py-10 text-white md:px-0">
-      <header className="mb-6">
-        <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-          Curriculum Vitae
-        </p>
-        <h1 className="text-3xl font-bold md:text-4xl">Raúl Romero</h1>
-        <p className="mt-2 max-w-2xl text-pretty text-sm text-zinc-400 md:text-base">
-          You can view the CV directly below or download it as a PDF.
-        </p>
+    <main className="section-shell pb-20 pt-12 sm:pt-20" id="main-content">
+      <header className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div>
+          <p className="eyebrow">Curriculum vitae</p>
+          <h1 className="mt-4 font-display text-5xl font-semibold tracking-[-0.05em] sm:text-6xl">
+            Experience, in detail.
+          </h1>
+          <p className="mt-5 max-w-2xl leading-7 text-muted">
+            View the complete CV below or keep a PDF copy for later.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link className="button-primary" href="/cv.pdf" target="_blank">
+            <Download className="size-4" />
+            Download PDF
+          </Link>
+          <Link className="button-secondary" href="/">
+            <NavArrowLeft className="size-4" />
+            Back home
+          </Link>
+        </div>
       </header>
 
-      <div className="mb-4 flex flex-wrap gap-3">
-        <Link
-          className="rounded-lg bg-zinc-100 px-4 py-2 text-sm font-semibold text-black transition hover:scale-[0.98]"
-          href="/cv.pdf"
-        >
-          Download CV (PDF)
-        </Link>
-        <Link
-          className="rounded-lg border border-zinc-700/60 px-4 py-2 text-sm font-semibold text-white transition hover:border-emerald-400/70 hover:text-emerald-200"
-          href="/"
-        >
-          Back to home
-        </Link>
-      </div>
-
-      <section className="rounded-xl border border-zinc-800/70 bg-zinc-900/40 p-2">
-        <div className="aspect-[4/5] w-full overflow-hidden rounded-lg bg-black/20">
+      <section className="glass-panel mt-10 rounded-[2rem] p-2 sm:p-3">
+        <div className="aspect-[4/5] min-h-[70vh] w-full overflow-hidden rounded-[1.4rem] bg-raised">
           <iframe
             className="h-full w-full"
             src="/cv.pdf"
             title="Raúl Romero CV"
           />
         </div>
-        <p className="mt-3 text-xs text-zinc-500">
-          If the PDF does not appear, place your file at public/cv.pdf.
+        <p className="px-3 pb-2 pt-4 font-mono text-[0.65rem] text-muted">
+          PDF viewer · use the download action if your browser blocks embedded
+          documents.
         </p>
       </section>
     </main>

@@ -1,29 +1,41 @@
-import { Linkedin, Github, MailOut, Discord } from "iconoir-react"
+import {
+  ArrowUpRight,
+  Discord,
+  Github,
+  Linkedin,
+  MailOut,
+} from "iconoir-react";
 
+const icons = {
+  github: Github,
+  email: MailOut,
+  linkedin: Linkedin,
+  discord: Discord,
+};
 
 export function ContactCard({ url, icon, title, subtitle }) {
-  const icons = {
-    github: <Github className="h-8 w-8 sm:h-10 sm:w-10" />,
-    email: <MailOut className="h-8 w-8 sm:h-10 sm:w-10" />,
-    linkedin: <Linkedin className="h-8 w-8 sm:h-10 sm:w-10" />,
-    discord: <Discord className="h-8 w-8 sm:h-10 sm:w-10" />,
-  }
+  const Icon = icons[icon];
 
   return (
     <a
-      aria-label={`${title} ${subtitle}`}
-      className="flex items-center space-x-3 rounded-xl border border-zinc-700/60 bg-zinc-800/30 p-4 shadow-md ring-2 ring-transparent backdrop-blur-md transition-all duration-200 ease-in hover:-translate-y-0.5 hover:ring-emerald-600 sm:p-5"
+      aria-label={`${title}: ${subtitle}`}
+      className="glass-panel group flex min-h-36 flex-col justify-between rounded-[1.75rem] p-5 transition duration-300 hover:-translate-y-1 hover:border-brand/35 motion-reduce:transform-none sm:p-6"
       href={url}
       rel="noreferrer"
-      target="_blank"
+      target={url.startsWith("mailto:") ? undefined : "_blank"}
     >
-      <span className="text-emerald-600 transition-all duration-150 hover:scale-110 hover:text-emerald-500">
-        {icons[icon]}
-      </span>
-      <div className="flex flex-col space-y-[2px] sm:space-y-[3px]">
-        <h5 className="text-sm font-semibold leading-none tracking-wide sm:text-base">{title}</h5>
-        <span className="text-xs leading-none opacity-60 sm:text-sm md:text-base">{subtitle}</span>
+      <div className="flex items-start justify-between gap-4">
+        <span className="flex size-11 items-center justify-center rounded-xl bg-brand/10 text-brand transition group-hover:rotate-[-5deg] motion-reduce:transform-none">
+          <Icon className="size-5" />
+        </span>
+        <ArrowUpRight className="size-4 text-muted transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand" />
+      </div>
+      <div className="mt-7">
+        <h2 className="font-display text-lg font-semibold">{title}</h2>
+        <p className="mt-1 break-words text-sm leading-5 text-muted">
+          {subtitle}
+        </p>
       </div>
     </a>
-  )
+  );
 }

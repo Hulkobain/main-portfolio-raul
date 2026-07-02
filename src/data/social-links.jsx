@@ -1,38 +1,16 @@
-import { Github, Linkedin } from "iconoir-react"
-
-import { cn } from "@/libs/utils"
-
-const iconSize = 23
-const stroke = "2.5"
-const className = "text-gray-400 transition-all duration-150"
+import { Github, Linkedin } from "iconoir-react";
 
 export const socialLinks = [
   {
-    id: 2,
+    id: "github",
     name: "GitHub",
     href: "https://github.com/hulkobain",
-    icon: (
-      <Github
-        className={cn(className, "hover:text-gray-300")}
-        height={iconSize}
-        name="GitHub"
-        stroke={stroke}
-        width={iconSize}
-      />
-    ),
+    icon: <Github className="size-5" />,
   },
   {
-    id: 3,
+    id: "linkedin",
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/raúl-romero-montoro",
-    icon: (
-      <Linkedin
-        className={cn(className, "hover:text-blue-600")}
-        height={iconSize}
-        name="LinkedIn"
-        stroke={stroke}
-        width={iconSize}
-      />
-    ),
+    icon: <Linkedin className="size-5" />,
   },
-]
+];
